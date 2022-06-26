@@ -8,7 +8,7 @@ CA:01
 
 Examples:
     | menu de opciones | boton| usuario y contraseña |
-    | "reportes"  | "usted presiono el boton de reportes"  | usted inserto su usuario y contraseña|
+    | "reportes"  | "usted presiono el boton de reportes"  | "usted inserto su usuario y contraseña"|
 
 
 Feature: HU02: Como jefe de familia, quiero ponerme en contacto con algún profesional sobre el tema de seguridad para poder asesorarme y estar más preparado.
@@ -31,40 +31,43 @@ CA:03
      Then procederemos a mandarle el reporte con las razones por las que se considero que podía ser una alerta. Asimismo, se adjuntarán las imágenes del momento en el que se consideró.
 Examples:
     | usuario | reporte del mes | alerta y evidencias |
-    | admin  | solicitar reporte  |adjuntar imagenes |
+    | "admin"  | "solicitar reporte"  |"adjuntar imagenes" |
 
  Feature: HU04: Como jefe de familia, quiero recibir consejos diarios acerca de que debería hacer para mantenerme seguro.
 Scenario: E04: El usuario recibe consejos diarios para aumentar su seguridad.
  CA:04
-   Given que sea usuario
-   When ingrese su nombre de usuario
-   And entre a la seccion de “consejos diarios” en la aplicacion
-   Then la aplicacion le brindara diversos consejos para mantener buenas practicas de seguridad.
+    Given que sea usuario
+    When ingrese su nombre de usuario
+    And entre a la seccion de “consejos diarios” en la aplicacion
+    Then la aplicacion le brindara diversos consejos para mantener buenas practicas de seguridad.
 
    Examples:
        | usuario | seccion de consejos| seguridad |
-       | ingresar su usuario  | entrar a la seccion  | leer consejos para practicas de seguridad |
+       | "ingresar su usuario"  | "entrar a la seccion"  | "leer consejos para practicas de seguridad" |
        
 Feature: HU05: Como dueño de empresa, quiero que un profesional haga un estudio de vulnerabilidades en nuestras instalaciones.
 Scenario: E05: Recibir un estudio de vulnerabilidades por parte de un profesional.
 CA:05
       Given que el dueño de empresa considere necesario
       When se contacte por correo con el asunto “estudio de vulnerabilidades a instalaciones”
-      Then un especialista procederá a visitar las instalaciones y hacer un estudio, el cual incluirá desde la infraestuctura hasta el personal. Luego dará el reporte y posibles soluciones.
+      Then un especialista procederá a visitar las instalaciones y hacer un estudio, el cual incluirá desde la infraestuctura hasta el personal. Luego dará el reporte 
+      y posibles soluciones.
       
 Examples:
     | dueño | correo a instalaciones | especialista|
-    | cuando sea necesario | enviar correo  | visitar instalaciones |
+    | "cuando sea necesario" | "enviar correo" | "visitar instalaciones" |
 
 Feature: HU06: Como dueño de empresa, quiero tener a disposición un grupo de seguridad privada en caso llegue una alerta importante.
 Scenario: E06: Seguridad privada en caso de alerta
 CA:06
      Given que el usuario reciba algun alerta
      When suceda un caso de robo
-     Then llega una notificación de seguridad privada de la compañía que previamente estudio las instalaciones de la empresa, para estar presentes hasta que lleguen las autoridades correspondientes.
+     Then llega una notificación de seguridad privada de la compañía que previamente estudio las instalaciones de la empresa, para estar presentes hasta que lleguen las autoridades
+      correspondientes.
+
 Examples:
     | usuario |acontecimiento de un asalto | notificacion de seguridad de la compañia|
-    | recibir alerta  | suceda un robo | recibir una notificacion de seguridad |
+    | "recibir alerta" | "suceda un robo" | "recibir una notificacion de seguridad" |
 
 Feature: HU07: Como dueño de empresa, quiero información sobre las aseguradoras que tiene planes contra todo riesgo a negocios.
 Scenario: E07: Recibir información sobre planes de seguro contra todo riesgo a negocios.
@@ -72,9 +75,10 @@ CA:07
     Given que el dueño de empresa considere necesario
     When se registra ingresando el nombre de su organizacion,correo y contraseña
     Then se le ofrecerá una lista con los seguros que recomendados para cada tipo de negocio
+
 Examples:
     | dueño | datos de aseguradoras | lista de seguros |
-    | cuando sea necesario | registrar datos  | ofrecer lista de seguros recomendados  |
+    | "cuando sea necesario" | "registrar datos" | "ofrecer lista de seguros recomendados"  |
 
 Feature: HU08: Como dueño de empresa, quiero mantener un registro de empleados para evitar las alertas de seguridad.
 Scenario: E08: Registrar a los empleados como personas permitidas a todas las instalaciones.
@@ -85,4 +89,5 @@ CA08:
 
 Examples:
     | dueño  |campo de personas permitidas | datos biometricos |
-    | contratar servicio | completar campo | registrar datos de empleados |
+    | "contratar servicio | completar campo" | "registrar datos de empleados" |
+
