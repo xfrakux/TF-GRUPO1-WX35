@@ -79,9 +79,10 @@ Examples:
 Feature: HU08: Como dueño de empresa, quiero mantener un registro de empleados para evitar las alertas de seguridad.
 Scenario: E08: Registrar a los empleados como personas permitidas a todas las instalaciones.
 CA08:
-Given que el dueño contrate el servicio
-When complete el campo de “Personas permitidas en las instalaciones”
-Then se registraran los datos biometricos de los empleados para evitar que la IA los detecte y notifique como alerta.
+    Given que el dueño contrate el servicio
+    When complete el campo de “Personas permitidas en las instalaciones”
+    Then se registraran los datos biometricos de los empleados para evitar que la IA los detecte y notifique como alerta.
+
 Examples:
     | dueño  |campo de personas permitidas | datos biometricos |
     | contratar servicio | completar campo | registrar datos de empleados |
